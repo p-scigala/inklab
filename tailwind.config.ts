@@ -7,6 +7,12 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px',
+    },
     extend: {
       colors: {
         primary: {
@@ -24,6 +30,9 @@ const config: Config = {
           900: "#231D35",
         }
       },
+      animation: {
+        'move-and-hide': 'moveAndHide 10s linear infinite',
+      }
     },
   },
   plugins: [],

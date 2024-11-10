@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import '@/app/ui/globals.css';
-import Header from "./ui/molecules/header";
-import Footer from "./ui/molecules/footer";
+import Header from "./ui/structure/header";
+import Footer from "./ui/structure/footer";
 
 export const metadata: Metadata = {
   title: "InkLab",

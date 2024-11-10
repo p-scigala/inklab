@@ -1,5 +1,5 @@
 import Gallery from '@/app/ui/components/gallery';
-import Container from '../ui/molecules/container';
+import Container from '../ui/structure/container';
 
 export default function GalleryPage() {
   const items = [

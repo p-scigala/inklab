@@ -1,4 +1,4 @@
-import Navigation from "@/app/ui/molecules/navigation";
+import Navigation from "@/app/ui/structure/navigation";
 import SocialIcons from "../../components/social-icons";
 
 export default function Footer() {

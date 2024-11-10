@@ -13,46 +13,47 @@ export default function Header() {
   const [scrollPosition, setScrollPosition] = useState<number>(0)
   const [viewportHeight, setViewportHeight] = useState<number>(500)
 
-  const scrollHandler = () => {
-    setScrollPosition(window.scrollY);
-    setTransparent(scrollPosition < viewportHeight ? true : false);
-  }
-
-  const resizeHandler = () => {
-    setViewportHeight(window.innerHeight);
-    setTransparent(scrollPosition < viewportHeight ? true : false);
-  }
-
   useLayoutEffect(() => {
-    resizeHandler();
-    scrollHandler();
-  });
+    setViewportHeight(window.innerHeight);
+    setScrollPosition(window.scrollY);
+    setTransparent(scrollPosition + 70 < viewportHeight ? true : false);
+  }, [scrollPosition, viewportHeight]);
 
   useEffect(() => {
-    window.addEventListener('scroll', scrollHandler, { passive: true });
-    window.addEventListener('resize', resizeHandler);
-  });
+    window.addEventListener('scroll', () => {
+      setScrollPosition(window.scrollY);
+      setTransparent(scrollPosition + 70 < viewportHeight ? true : false);
+    }, { passive: true });
+    window.addEventListener('resize', () => {
+      setViewportHeight(window.innerHeight);
+      setTransparent(scrollPosition + 70 < viewportHeight ? true : false);
+    });
+  }, [scrollPosition, viewportHeight]);
 
   const leftMenu = [
     {
       name: 'Home',
-      href: '/',
+      href: '/#home',
     },
     {
       name: 'About us',
-      href: '/about-us',
+      href: '/#about-us',
     },
     {
       name: 'Opinions',
-      href: '/opinions',
+      href: '/#opinions',
     },
     {
-      name: 'Our works',
-      href: '/gallery',
+      name: 'Find us',
+      href: '/#find-us',
     },
   ];
 
   const rightMenu = [
+    {
+      name: 'Our works',
+      href: '/gallery',
+    },
     {
       name: 'Contact us',
       href: '/contact',
@@ -62,7 +63,7 @@ export default function Header() {
   return (
     <header className={clsx(
       "fixed w-full h-[70px] flex items-center justify-center px-4 z-10",
-      !transparent && "bg-white",
+      !transparent && "bg-white shadow",
       "transition")}>
       <div className="w-full max-w-[1024px] flex items-center justify-between">
         <Image
@@ -72,7 +73,7 @@ export default function Header() {
           height={60} className="h-[60px]" />
         <Navigation
           links={leftMenu}
-          className="justify-center"
+          className="justify-center absolute left-0 right-0"
           itemsClassName={transparent ? "text-white" : ""} />
         <Navigation
           links={rightMenu}
