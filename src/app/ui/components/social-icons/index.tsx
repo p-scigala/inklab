@@ -12,7 +12,7 @@ interface SocialIconsProps {
 
 export default function SocialIcons({ links }: SocialIconsProps) {
   return (
-    <div>
+    <div className="flex justify-center items-center gap-4">
       {links.map((link, key) => {
         return <Link
           href={link.link || ''}

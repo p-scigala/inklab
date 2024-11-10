@@ -16,28 +16,40 @@ export default function Hero({ images, children, className }: HeroProps) {
     const [viewportHeight, setViewportHeight] = useState<number>(500)
     const [contentOpacity, setContentOpacity] = useState<number>(1)
 
-    useLayoutEffect(() => {
+    const scrollHandler = () => {
         setScrollPosition(window.scrollY);
+        calcOpacity();
+    }
+
+    const resizeHandler = () => {
         setViewportHeight(window.innerHeight);
+        calcOpacity();
+    }
+
+    const calcOpacity = () => {
         const opacity = 1 - (scrollPosition / viewportHeight * 2);
         setContentOpacity(opacity > 0 ? opacity : 0);
-    }, [scrollPosition, viewportHeight]);
+    }
+
+    useLayoutEffect(() => {
+        resizeHandler();
+        scrollHandler();
+    });
 
     useEffect(() => {
-        const calcOpacity = () => {
-            const opacity = 1 - (scrollPosition / viewportHeight * 2);
-            setContentOpacity(opacity > 0 ? opacity : 0);
-        }
+        window.addEventListener('resize', resizeHandler);
+        return () => {
+            window.removeEventListener("resize", resizeHandler);
+        };
+    });
 
-        window.addEventListener('scroll', () => {
-            setScrollPosition(window.scrollY);
-            calcOpacity();
-        }, { passive: true });
-        window.addEventListener('resize', () => {
-            setViewportHeight(window.innerHeight);
-            calcOpacity();
-        });
-    }, [scrollPosition, viewportHeight]);
+    useEffect(() => {
+        window.addEventListener('scroll', scrollHandler, { passive: true });
+        return () => {
+            window.removeEventListener("scroll", scrollHandler);
+        };
+    });
+
 
     useEffect(() => {
         const interval = setInterval(() => {

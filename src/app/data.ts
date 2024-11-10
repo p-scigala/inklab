@@ -55,4 +55,21 @@ export const data = {
             ],
         },
     },
+    opinions: [
+        {
+            name: 'Lorem ipsum',
+            description: `Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur.`,
+        },
+        {
+            name: 'Lorem ipsum 2',
+            description: `Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur.`,
+        },
+        {
+            name: 'Lorem ipsum 3',
+            description: `Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur.`,
+        },
+    ],
 }

@@ -13,14 +13,14 @@ import { BoxProps } from "./ui/components/boxes/box";
 export default function HomePage() {
   return (
     <main>
-      <Container id="home">
+      <Container id="home" noPadding fitScreen>
         <Hero images={data.hero.images as ImageProps[]}>
           <div className="flex flex-col items-center justify-center">
             <Image src={Logo}
               alt="InkLab"
               width={320}
               height={320} />
-            <Heading tag="h1" content="InkLab" className="text-white" />
+            <Heading tag="h1" content="InkLab Tattoo Studio" className="text-white" />
           </div>
         </Hero>
       </Container>
@@ -40,7 +40,7 @@ export default function HomePage() {
       </Container>
 
       <Container id="opinions">
-        <Opinions />
+        <Opinions items={data.opinions} title="What people think about us" />
       </Container>
 
       <Container id="find-us">

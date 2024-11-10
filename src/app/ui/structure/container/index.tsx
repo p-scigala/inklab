@@ -6,14 +6,21 @@ interface ContainerProps {
     children: ReactElement
     asSection?: boolean
     className?: string | string[]
+    noPadding?: boolean
+    fitScreen?: boolean
 }
 
-export default function Section({ id, children, asSection = true, className }: ContainerProps) {
-    const defaultClasses = "flex items-center justify-center";
+export default function Section({ id, children, asSection = true, noPadding = false, fitScreen = false, className }: ContainerProps) {
+    const defaultClasses = clsx(
+        "flex items-center justify-center",
+        fitScreen && "min-height-screen",
+        noPadding ? "py-0" : "py-12",
+
+    );
 
     return (
         asSection ? (
-            <section className={clsx(defaultClasses, "min-h-screen", className)} id={id}>
+            <section className={clsx(defaultClasses, className)} id={id}>
                 {children}
             </section>
         ) : (

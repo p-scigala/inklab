@@ -13,22 +13,34 @@ export default function Header() {
   const [scrollPosition, setScrollPosition] = useState<number>(0)
   const [viewportHeight, setViewportHeight] = useState<number>(500)
 
-  useLayoutEffect(() => {
-    setViewportHeight(window.innerHeight);
+  const scrollHandler = () => {
     setScrollPosition(window.scrollY);
     setTransparent(scrollPosition + 70 < viewportHeight ? true : false);
-  }, [scrollPosition, viewportHeight]);
+  }
+
+  const resizeHandler = () => {
+    setViewportHeight(window.innerHeight);
+    setTransparent(scrollPosition + 70 < viewportHeight ? true : false);
+  }
+
+  useLayoutEffect(() => {
+    resizeHandler();
+    scrollHandler();
+  });
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      setScrollPosition(window.scrollY);
-      setTransparent(scrollPosition + 70 < viewportHeight ? true : false);
-    }, { passive: true });
-    window.addEventListener('resize', () => {
-      setViewportHeight(window.innerHeight);
-      setTransparent(scrollPosition + 70 < viewportHeight ? true : false);
-    });
-  }, [scrollPosition, viewportHeight]);
+    window.addEventListener('resize', resizeHandler);
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+  };
+  });
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollHandler, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", scrollHandler);
+  };
+  });
 
   const leftMenu = [
     {

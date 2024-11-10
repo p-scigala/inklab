@@ -40,7 +40,7 @@ export default function Footer() {
         },
     ]
     return (
-        <footer>
+        <footer className="flex items-center justify-center flex-col gap-8 p-4 border-t">
             <SocialIcons links={social} />
             <Navigation links={nav} />
         </footer>
