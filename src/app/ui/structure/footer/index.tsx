@@ -1,27 +1,28 @@
 import Navigation from "@/app/ui/structure/navigation";
 import SocialIcons from "../../components/social-icons";
+import Link from "next/link";
 
 export default function Footer() {
     const nav = [
         {
             name: 'Home',
-            href: '/',
-            icon: ''
+            href: '/#home',
         },
         {
-            name: 'About',
-            href: '/about',
-            icon: '',
+            name: 'About us',
+            href: '/#about-us',
+        },
+        {
+            name: 'Opinions',
+            href: '/#opinions',
         },
         {
             name: 'Contact',
             href: '/contact',
-            icon: ''
         },
         {
             name: 'Gallery',
             href: '/gallery',
-            icon: ''
         },
     ];
 
@@ -43,6 +44,9 @@ export default function Footer() {
         <footer className="flex items-center justify-center flex-col gap-8 p-4 border-t">
             <SocialIcons links={social} />
             <Navigation links={nav} />
+            <div>
+                Coded & designed by <Link href="https:/p-scigala.pl"><strong>P-SCIGALA</strong></Link> | All rights reserved
+            </div>
         </footer>
     );
 }

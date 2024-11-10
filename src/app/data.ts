@@ -1,3 +1,5 @@
+import { ImageProps } from "next/image";
+
 export const data = {
     hero: {
         images: [
@@ -60,16 +62,28 @@ export const data = {
             name: 'Lorem ipsum',
             description: `Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur.`,
+            rating: 5,
+            image: {
+                src: "/profile/profile-photo-01.webp"
+            } as ImageProps
         },
         {
             name: 'Lorem ipsum 2',
             description: `Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur.`,
+            rating: 5,
+            image: {
+                src: "/profile/profile-photo-02.webp"
+            } as ImageProps
         },
         {
             name: 'Lorem ipsum 3',
             description: `Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur.`,
+            rating: 5,
+            image: {
+                src: "/profile/profile-photo-03.webp"
+            } as ImageProps
         },
     ],
 }

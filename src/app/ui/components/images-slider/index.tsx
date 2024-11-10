@@ -25,7 +25,7 @@ export default function ImagesSlider({ items, className }: ImagesSliderProps) {
     return (
         <div className={clsx("ImagesSlider relative flex items-center jusify-start w-full h-full overflow-hidden", className)}>
             <button
-                className="absolute w-10 h-10 z-[2] left-[-20px] hover:left-0 transition-all"
+                className="absolute w-10 h-10 z-[2] left-[-20px] hover:left-[-10px] transition-all"
                 onClick={() => changeItem(false)}>
                 <Image src={ArrowLeft} alt="" />
             </button>
@@ -43,7 +43,7 @@ export default function ImagesSlider({ items, className }: ImagesSliderProps) {
                 </div>
             </div>
             <button
-                className="absolute w-10 h-10 z-[2] right-[-20px] hover:right-0 transition-all"
+                className="absolute w-10 h-10 z-[2] right-[-20px] hover:right-[-10px] transition-all"
                 onClick={() => changeItem(true)}>
                 <Image src={ArrowRight} alt="" />
             </button>
