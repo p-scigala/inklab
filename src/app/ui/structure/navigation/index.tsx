@@ -18,7 +18,7 @@ export default function Navigation({ links, className, itemsClassName }: Navigat
     const pathname = usePathname();
 
     return (
-        <nav className={clsx("flex items-center gap-2", className)}>
+        <nav className={clsx("flex items-center gap-2 w-fit", className)}>
             {links.map((link) => {
                 return (
                     <Link
@@ -26,7 +26,7 @@ export default function Navigation({ links, className, itemsClassName }: Navigat
                         href={link.href}
                         className={clsx(
                             "p-1",
-                            "text-black hover:text-primary-500",
+                            "hover:text-primary-500",
                             "transition",
                             itemsClassName,
                             pathname === link.href && 'active',

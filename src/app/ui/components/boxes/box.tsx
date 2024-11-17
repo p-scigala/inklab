@@ -5,9 +5,12 @@ export interface BoxProps {
     image?: ImageProps
     text?: string
     shift?: 'none' | 'sm' | 'md' | 'lg'
+    delay?: number
 }
 
-export default function Box({ image, text, shift }: BoxProps) {
+export default function Box({ image, text, shift, delay }: BoxProps) {
+    const animationDelay = delay ? delay : 0;
+
     return (
         <div className={clsx(
             "Box relative w-1/3 h-fit p-4 top-0 shadow border transition-all",
@@ -29,7 +32,9 @@ export default function Box({ image, text, shift }: BoxProps) {
                         className={clsx(
                             "absolute w-full h-full object-cover animate-move-and-hide",
                             image.className,
+                            delay && `${delay}s`
                         )}
+                        style={{ animationDelay: `${animationDelay}s` }}
                     />
                     <Image
                         src={image.src}
@@ -41,7 +46,7 @@ export default function Box({ image, text, shift }: BoxProps) {
                             "absolute w-full h-full object-cover animate-move-and-hide",
                             image.className,
                         )}
-                        style={{ animationDelay: "5s" }}
+                        style={{ animationDelay: `${animationDelay + 5}s` }}
                     />
                 </div>
             }

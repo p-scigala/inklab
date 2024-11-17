@@ -9,6 +9,8 @@ import { data } from "./data";
 import Image, { ImageProps } from 'next/image';
 import Logo from '/public/logo.svg';
 import { BoxProps } from "./ui/components/boxes/box";
+import ContactData from "./ui/components/contact-data";
+import MapImage from '/public/map.svg';
 
 export default function HomePage() {
   return (
@@ -44,7 +46,13 @@ export default function HomePage() {
       </Container>
 
       <Container id="find-us">
-        <Map />
+        <div className="flex flex-col items-center justify-center gap-4">
+          <Map
+            image={MapImage}
+            markers={data.contact.map.markers}
+          />
+          <ContactData address={data.contact.address} withIcons inline />
+        </div>
       </Container>
     </main>
   );

@@ -29,7 +29,7 @@ export default function Opinions({ items, title }: OpinionsProps) {
 
               if (ratingNumber) {
                 for (let x = 0; x < ratingNumber; x++) {
-                  stars.push(<Image src={Star} alt="" width={16} height={16} />)
+                  stars.push(<Image key={`star-${x}`} src={Star} alt="" width={16} height={16} />)
                 }
               }
 

@@ -1,4 +1,5 @@
 import { ImageProps } from "next/image";
+import { MapMarkerProps } from "./ui/components/map/map-marker";
 
 export const data = {
     hero: {
@@ -46,6 +47,7 @@ export const data = {
                     text: `Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.`,
                     shift: "md",
+                    delay: 0.3
                 },
                 {
                     image: {
@@ -53,6 +55,7 @@ export const data = {
                     },
                     text: `Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatur.`,
+                    delay: 0.6
                 },
             ],
         },
@@ -86,4 +89,41 @@ export const data = {
             } as ImageProps
         },
     ],
+    contact: {
+        address: {
+            street: '30 Earls Avenue',
+            city: 'White Ladies Aston',
+            phone: '+44 878 1186 3087',
+            zipCode: 'WR7 8NA',
+            country: 'United Kingdom',
+        },
+        map: {
+            markers: [
+                {
+                    x: 17.5,
+                    y: 70,
+                    content: {
+                        text: "Lorem ipsum 1",
+                        visibility: 'onHover',
+                    },
+                } as MapMarkerProps,
+                {
+                    x: 47.6,
+                    y: 20,
+                    content: {
+                        text: "Lorem ipsum 2",
+                        visibility: 'static',
+                    },
+                } as MapMarkerProps,
+                {
+                    x: 72,
+                    y: 66,
+                    content: {
+                        text: "Lorem ipsum 3",
+                        visibility: 'onClick',
+                    }
+                } as MapMarkerProps,
+            ]
+        }
+    }
 }

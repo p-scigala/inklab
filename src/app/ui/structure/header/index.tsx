@@ -32,14 +32,14 @@ export default function Header() {
     window.addEventListener('resize', resizeHandler);
     return () => {
       window.removeEventListener("resize", resizeHandler);
-  };
+    };
   });
 
   useEffect(() => {
     window.addEventListener('scroll', scrollHandler, { passive: true });
     return () => {
       window.removeEventListener("scroll", scrollHandler);
-  };
+    };
   });
 
   const leftMenu = [
@@ -75,7 +75,7 @@ export default function Header() {
   return (
     <header className={clsx(
       "fixed w-full h-[70px] flex items-center justify-center px-4 z-10",
-      !transparent && "bg-white shadow",
+      !transparent && "bg-foreground-100 shadow",
       "transition")}>
       <div className="w-full max-w-[1024px] flex items-center justify-between">
         <Image
@@ -85,12 +85,12 @@ export default function Header() {
           height={60} className="h-[60px]" />
         <Navigation
           links={leftMenu}
-          className="justify-center absolute left-0 right-0"
-          itemsClassName={transparent ? "text-white" : ""} />
+          className="justify-center absolute left-0 right-0 m-auto"
+          itemsClassName={transparent ? "text-foreground-100" : ""} />
         <Navigation
           links={rightMenu}
           className="justify-end"
-          itemsClassName={transparent ? "text-white" : ""} />
+          itemsClassName={transparent ? "text-foreground-100" : ""} />
       </div>
     </header>
   );

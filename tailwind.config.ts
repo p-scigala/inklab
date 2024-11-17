@@ -28,7 +28,21 @@ const config: Config = {
           500: "#611D35",
           700: "#421D35",
           900: "#231D35",
-        }
+        },
+        foreground: {
+          100: "#FFFFFF",
+          300: "#EEEEEE",
+          500: "#DDDDDD",
+          700: "#CCCCCC",
+          900: "#BBBBBB",
+        },
+        background: {
+          100: "#060606",
+          300: "#101010",
+          500: "#1A1A1A",
+          700: "#262626",
+          900: "#323232",
+        },
       },
       animation: {
         'move-and-hide': 'moveAndHide 10s linear infinite',

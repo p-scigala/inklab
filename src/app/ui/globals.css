@@ -4,20 +4,23 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary-100: #FEE00D;
+  --color-primary-300: #FFCD08;
+  --color-primary-500: #FEB412;
+  --color-primary-700: #FF9A0D;
+  --color-primary-900: #DD8008;
+  --color-secondary-100: #9F1D35;
+  --color-secondary-300: #801D35;
+  --color-secondary-500: #611D35;
+  --color-secondary-700: #421D35;
+  --color-secondary-900: #231D35;
+  --color-background: #FFFFFF;
+  --color-foreground: #060606;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--color-foreground);
+  background: var(--color-background);
   font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
   font-size: 14px;
   overflow-x: hidden;
