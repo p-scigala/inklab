@@ -9,6 +9,7 @@ interface NavigationProps {
         name?: string
         href: string
         icon?: string
+        disabled?: boolean
     }[]
     className?: string | string[]
     itemsClassName?: string | string[]
@@ -24,13 +25,12 @@ export default function Navigation({ links, className, itemsClassName, setMenuVi
                 return (
                     <Link
                         key={link.name}
-                        href={link.href}
+                        href={link.disabled ? "#" : link.href}
                         className={clsx(
-                            "p-1",
-                            "hover:text-primary-500",
-                            "transition",
+                            "p-1 transition",
                             itemsClassName,
                             pathname === link.href && "active",
+                            link.disabled ? "opacity-50 cursor-auto pointer-events-none" : "hover:text-primary-500",
                         )}
                         onClick={() => setMenuVisible(false)}
                     >

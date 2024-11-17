@@ -68,10 +68,12 @@ export default function Header() {
     {
       name: "Our works",
       href: "/gallery",
+      disabled: true
     },
     {
       name: "Contact us",
       href: "/contact",
+      disabled: true
     },
   ];
 
