@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import clsx from 'clsx';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
 interface NavigationProps {
     links: {
@@ -12,13 +12,14 @@ interface NavigationProps {
     }[]
     className?: string | string[]
     itemsClassName?: string | string[]
+    setMenuVisible?: any
 }
 
-export default function Navigation({ links, className, itemsClassName }: NavigationProps) {
+export default function Navigation({ links, className, itemsClassName, setMenuVisible }: NavigationProps) {
     const pathname = usePathname();
 
     return (
-        <nav className={clsx("flex items-center gap-2 w-fit", className)}>
+        <nav className={clsx("max-w-full flex items-center gap-2 w-fit whitespace-nowrap", className)}>
             {links.map((link) => {
                 return (
                     <Link
@@ -29,8 +30,9 @@ export default function Navigation({ links, className, itemsClassName }: Navigat
                             "hover:text-primary-500",
                             "transition",
                             itemsClassName,
-                            pathname === link.href && 'active',
+                            pathname === link.href && "active",
                         )}
+                        onClick={() => setMenuVisible(false)}
                     >
                         {link.name}
                     </Link>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import '@/app/ui/globals.css';
+import "@/app/ui/globals.css";
 import Header from "./ui/structure/header";
 import Footer from "./ui/structure/footer";
 
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "InkLab",
   description: "Inklab description",
   icons: {
-    icon: '/logo.svg',
+    icon: "/logo.svg",
   },
 };
 

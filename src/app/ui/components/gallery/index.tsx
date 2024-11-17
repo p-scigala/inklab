@@ -1,7 +1,7 @@
 "use client";
 
-import Image from 'next/image';
-import { useState } from 'react';
+import Image from "next/image";
+import { useState } from "react";
 
 interface GalleryItemProps {
     url: string
@@ -31,7 +31,7 @@ export default function Gallery({ items, thumb }: GalleryProps) {
                 return <button onClick={() => displayImage(item)} key={index}>
                     <Image
                         src={item.thumb || item.url}
-                        alt={item.alt || ''}
+                        alt={item.alt || ""}
                         width={thumb?.width || 100}
                         height={thumb?.height || 100}
                     />
@@ -42,7 +42,7 @@ export default function Gallery({ items, thumb }: GalleryProps) {
                 <div>
                     <Image
                         src={activeItem.thumb || activeItem.url}
-                        alt={activeItem.alt || ''}
+                        alt={activeItem.alt || ""}
                         width={1024}
                         height={768}
                     />

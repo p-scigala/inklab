@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactElement, useEffect, useLayoutEffect, useState } from "react";
-import Image, { ImageProps } from 'next/image';
+import Image, { ImageProps } from "next/image";
 import clsx from "clsx";
 
 interface HeroProps {
@@ -37,14 +37,14 @@ export default function Hero({ images, children, className }: HeroProps) {
     });
 
     useEffect(() => {
-        window.addEventListener('resize', resizeHandler);
+        window.addEventListener("resize", resizeHandler);
         return () => {
             window.removeEventListener("resize", resizeHandler);
         };
     });
 
     useEffect(() => {
-        window.addEventListener('scroll', scrollHandler, { passive: true });
+        window.addEventListener("scroll", scrollHandler, { passive: true });
         return () => {
             window.removeEventListener("scroll", scrollHandler);
         };

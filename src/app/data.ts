@@ -21,8 +21,8 @@ export const data = {
                 src: "/imgs/image-04.webp"
             },
         ],
-        text: `<h2>Who we are</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+        title: "Who we are",
+        text: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
@@ -90,38 +90,51 @@ export const data = {
         },
     ],
     contact: {
-        address: {
+        address1: {
             street: '30 Earls Avenue',
             city: 'White Ladies Aston',
             phone: '+44 878 1186 3087',
             zipCode: 'WR7 8NA',
             country: 'United Kingdom',
+            conutryShort: 'UK',
+        },
+        address2: {
+            street: '3 Seafield Street',
+            city: 'Llanvihangel Gobion',
+            phone: '+44 077 1406 2086',
+            zipCode: 'NP7 5UH',
+            country: 'United Kingdom',
+            conutryShort: 'UK',
+        },
+        address3: {
+            street: '67 Witney Way',
+            city: 'Knockando',
+            phone: '+44 079 5557 0031',
+            zipCode: 'AB38 4AN',
+            country: 'United Kingdom',
+            conutryShort: 'UK',
         },
         map: {
             markers: [
                 {
+                    label: "Put cursor over me!",
                     x: 17.5,
                     y: 70,
-                    content: {
-                        text: "Lorem ipsum 1",
-                        visibility: 'onHover',
-                    },
+                    content: "Lorem ipsum 1",
+                    contentType: 'onHover',
                 } as MapMarkerProps,
                 {
                     x: 47.6,
                     y: 20,
-                    content: {
-                        text: "Lorem ipsum 2",
-                        visibility: 'static',
-                    },
+                    content: "Lorem ipsum 2",
+                    contentType: 'static',
                 } as MapMarkerProps,
                 {
+                    label: 'Click on me!',
                     x: 72,
                     y: 66,
-                    content: {
-                        text: "Lorem ipsum 3",
-                        visibility: 'onClick',
-                    }
+                    content: "Lorem ipsum 3",
+                    contentType: 'onClick',
                 } as MapMarkerProps,
             ]
         }

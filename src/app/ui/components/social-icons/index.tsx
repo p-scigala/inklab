@@ -15,13 +15,13 @@ export default function SocialIcons({ links }: SocialIconsProps) {
     <div className="flex justify-center items-center gap-4">
       {links.map((link, key) => {
         return <Link
-          href={link.link || ''}
+          href={link.link || ""}
           key={key}
         >
           <Image
             src={link.src}
-            alt={link.title || ''}
-            title={link.alt || ''}
+            alt={link.title || ""}
+            title={link.alt || ""}
             width={18}
             height={18}
           />

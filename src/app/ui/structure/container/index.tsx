@@ -14,7 +14,7 @@ export default function Section({ id, children, asSection = true, noPadding = fa
     const defaultClasses = clsx(
         "flex items-center justify-center",
         fitScreen && "min-height-screen",
-        noPadding ? "py-0" : "py-12",
+        noPadding ? "py-0 px-0" : "py-12 px-4",
 
     );
 

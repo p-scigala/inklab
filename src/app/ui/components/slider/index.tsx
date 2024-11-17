@@ -4,7 +4,7 @@ import { ReactElement, useState } from "react";
 import clsx from "clsx";
 import ArrowLeft from "/public/arrows/arrow-left-v2.svg";
 import ArrowRight from "/public/arrows/arrow-right-v2.svg";
-import Image from 'next/image';
+import Image from "next/image";
 
 interface SliderProps {
     items: ReactElement[]
